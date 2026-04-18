@@ -1,0 +1,9 @@
+{
+  "name": "chrome-ext-translate",
+  "version": "1.0.0",
+  "description": "Chrome extension — select any word in a PDF and translate it with AI using page context",
+  "scripts": {
+    "update-pdfjs": "node setup.js"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,8 @@
+node_modules/
+package-lock.json
+
+# PDF.js source maps — not needed to run the extension
+pdfjs/**/*.map
+
+# Sample PDF bundled with PDF.js — not needed
+pdfjs/web/compressed.tracemonkey-pldi-09.pdf

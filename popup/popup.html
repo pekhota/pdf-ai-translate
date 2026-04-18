@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      color: #222;
+    }
+
+    h2 {
+      font-size: 15px;
+      margin-bottom: 16px;
+      color: #111;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 4px;
+    }
+
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d0d0d0;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    input[type="password"]:focus,
+    select:focus {
+      border-color: #1a73e8;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #888;
+      margin-top: -8px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 9px;
+      background: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    button:hover { background: #1558c0; }
+    button:active { background: #1246a0; }
+
+    .status {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #2e7d32;
+      min-height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>PDF Translate</h2>
+
+  <label for="apiKey">OpenAI API Key</label>
+  <input type="password" id="apiKey" placeholder="sk-…">
+  <p class="hint">Get your key at platform.openai.com/api-keys</p>
+
+  <label for="targetLang">Translate to</label>
+  <select id="targetLang">
+    <option value="Ukrainian">Ukrainian</option>
+    <option value="Spanish">Spanish</option>
+    <option value="French">French</option>
+    <option value="German">German</option>
+    <option value="Italian">Italian</option>
+    <option value="Portuguese">Portuguese</option>
+    <option value="Polish">Polish</option>
+    <option value="Japanese">Japanese</option>
+    <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+    <option value="Korean">Korean</option>
+    <option value="Arabic">Arabic</option>
+    <option value="Dutch">Dutch</option>
+    <option value="Turkish">Turkish</option>
+    <option value="Swedish">Swedish</option>
+  </select>
+
+  <button id="save">Save</button>
+  <div class="status" id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
