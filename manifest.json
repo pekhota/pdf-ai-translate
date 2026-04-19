@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "PDF Translate",
+  "name": "PDF AI Translate",
   "version": "1.0.0",
   "description": "Select any word in a PDF and translate it using AI with page context.",
   "permissions": [
@@ -13,7 +13,7 @@
   },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "PDF Translate"
+    "default_title": "PDF AI Translate"
   },
   "web_accessible_resources": [
     {

@@ -36,6 +36,37 @@ jobs:
           fi
           echo "OK: overlay files are in sync."
 
+      - name: Audit dependencies for vulnerabilities
+        run: npm audit --audit-level=high
+
+  build:
+    name: Build Extension Artifact
+    runs-on: ubuntu-latest
+    needs: quality
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pack extension
+        run: |
+          zip -r extension.zip . \
+            --exclude "*.git*" \
+            --exclude "node_modules/*" \
+            --exclude ".github/*" \
+            --exclude "*.map" \
+            --exclude "scripts/*" \
+            --exclude "setup.js" \
+            --exclude "eslint.config.js" \
+            --exclude "package*.json" \
+            --exclude "pdfjs/web/compressed.tracemonkey-pldi-09.pdf"
+
+      - name: Upload extension artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-ai-translate
+          path: extension.zip
+          retention-days: 30
+
   secrets-scan:
     name: Secret Scanning
     runs-on: ubuntu-latest
